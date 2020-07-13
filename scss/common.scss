@@ -1,0 +1,87 @@
+@charset "UTF-8";
+@import 'sassConfig.scss';
+
+.color-main { color: $color-main;}
+.color-second { color: $color-second}
+.text-main {color: $text-main}
+
+.container {
+    width: $container;
+    margin: 0 auto;
+}
+
+.pull-left{float:left;}
+.pull-right{float:right;}
+
+
+//header
+.logo{
+    margin-top: 30px ;
+    margin-bottom: 30px;
+    img{ display: block;}
+}
+
+//顶部菜单
+.menu-link{
+    line-height: 22px;
+    a, span, div{ float:right; }
+    a{ color: $text-gray;}
+    .link { 
+        width: 1px;
+        height: 12px;
+        margin: 6px 10px 10px;
+        background-color: #cfcfcf;
+    }
+}
+
+// 语言菜单
+.lang{
+    width: 53px;
+    height: 22px;
+    background-color: #ececec;
+    color: $text-gray;
+    text-align: center;
+
+    &::after{
+        content: '';
+        display: inline-block;
+        height: 6px;
+        width: 6px;  
+        margin: 0 0 3px 3px;
+        border-left: 1px solid #000;
+        border-bottom: 1px solid #000;
+
+        // css3
+        @include webkit(box-sizing, border-box);
+        @include webkit(transform, rotate(-45deg));
+    }
+
+    /*
+    i{ 
+        display: inline-block;
+        height: 6px;
+        width: 6px;  
+        margin: 0 0 3px 3px;
+        border-left: 1px solid #000;
+        border-bottom: 1px solid #000;
+
+        // css3
+        @include webkit(box-sizing, border-box);
+        @include webkit(transform, rotate(-45deg));
+    }
+    */  
+}
+
+// clearfix 清除浮动
+.clearfix:after{
+    content:".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix{
+    display: inline-block;
+}
+* html .clearfix{ height: 1%; }
+.clearfix { display: block; }
